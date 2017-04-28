@@ -7,6 +7,7 @@
       such as number of of flashes, flash spacing, cloud-to-cloud
       flash pattern offset, etc. -- to produce a realistic 
       pattern of lightning flashes inside the clouds.
+<<<<<<< HEAD
 
       Whenever possible, the parameters used in this model are
       obtained from statistics and figures from NOAA / National 
@@ -31,6 +32,16 @@ int onboardLED = 13;
 // FLASH PARAMETERS
 int flashDelay() {
   return random(20, 600);     // Set delay between flash events
+=======
+*/
+
+int pinLED = 13;        // Set onboard LED pin address
+int flashDelay = 1000;  // Set delay between flash events
+
+int stormRandomNumber(int lowBound, int highBound) {
+  // Placeholder function to return flash paramaters
+  return random(lowBound, highBound);
+>>>>>>> origin/master
 }
 
 // FLASH FUNCTION
@@ -83,7 +94,17 @@ void setup() {
   digitalWrite(onboardLED, LOW);
 }
 
+<<<<<<< HEAD
 void loop() {
   flash();             // Call a flash request 
+=======
+void setup() {
+  pinMode(pinLED, OUTPUT);  // Set pin as output
+}
+
+void loop() {
+  flash(); // Call a flash request
+  
+>>>>>>> origin/master
   delay(flashDelay);   // Pause between flashes
 }
